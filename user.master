@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="user.master.cs" Inherits="user" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> E-Learning </title>
+    <link href="css/user.css" rel="stylesheet"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div id="header">
+     <img src="images/logo.jpg"/ style="height:60px;width:60px;margin-top:15px;margin-left:20px;"/>
+     <div style="color:white;padding-left:30px;margin-top:20px;font-family:'Microsoft New Tai Lue';font-size:30pt;display:inline-block;vertical-align:top;width:22%">
+        <a href="Default.aspx" style="color:white;text-decoration:none"><asp:label runat="server" Text="E-learning"></asp:label></a>
+      </div>
+        <div style="display:inline-block;height:auto;width:68%;margin-top:5px;vertical-align:top;">
+        <div style="height:30px;width:auto;float:right;">
+            <span id="username" runat="server"  style="display:none;font-family:'Microsoft New Tai Lue';font-size:13pt;color:white;width:auto">Welcome <% Response.Write(Session["s_name"]);%>|
+            </span>
+             <asp:button ID="logbtn" OnClick="logbtn_Click" Text="Logout" style="display:none;background-color:transparent;color:white;outline:none;border:none;font-family:'Microsoft New Tai Lue';font-size:13pt;cursor:pointer" runat="server"/>
+        </div>
+        <ul id="menu" runat="server">
+        </ul>
+        </div>
+   </div>
+        <div id="search" runat="server" style="background:url('images/header.png');height:60px;border-bottom:2px solid whitesmoke;padding-left:20px">
+         <%--  <asp:textbox runat="server" placeholder="search here" id="srchbox"/>--%>
+        </div>
+       <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+          </form>
+</body>
+</html>
